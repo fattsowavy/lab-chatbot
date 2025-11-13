@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+env/
+.venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE / Editor
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Flask
+instance/
+.webassets-cache/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local

@@ -1,0 +1,25 @@
+{
+  "jadwal": {
+    "hari_kerja": "Senin - Sabtu",
+    "jam_buka": "07:00",
+    "jam_tutup": "18:00",
+    "istirahat": "12:00 - 13:00"
+  },
+  "aturan": {
+    "syarat": [
+      "Rambut tidak boleh panjang untuk laki-laki",
+      "Dilarang makan/minum di dalam lab",
+      "Gunakan PC sesuai nomor absen"
+    ],
+    "sanksi": ["Peringatan lisan", "Dilarang masuk", "Laporan ke fakultas"]
+  },
+  "spesifikasi": {
+    "pc": {
+      "jumlah": 40,
+      "processor": "Intel Core i5",
+      "ram": "8 GB",
+      "os": "Windows 10"
+    },
+    "software": ["Python", "Java", "MySQL Workbench", "VS Code"]
+  }
+}

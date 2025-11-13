@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot ICLABS UMI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto max-w-2xl p-4">
+      <div class="bg-white rounded-xl shadow-xl p-6 mt-10">
+        <h1 class="text-3xl font-bold text-center text-indigo-700 mb-6">
+          ICLABS FIKOM UMI
+        </h1>
+        <div
+          id="chatbox"
+          class="h-96 overflow-y-auto mb-4 p-4 bg-gray-50 rounded-lg border"
+        >
+          <p class="text-center text-gray-500">Tanya apa saja tentang lab!</p>
+        </div>
+        <div class="flex gap-2">
+          <input
+            type="text"
+            id="userInput"
+            class="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            placeholder="Ketik di sini..."
+          />
+          <button
+            id="sendBtn"
+            class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition"
+          >
+            Kirim
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const chatbox = document.getElementById("chatbox");
+      const input = document.getElementById("userInput");
+      const sendBtn = document.getElementById("sendBtn");
+
+      function addMessage(text, sender) {
+        const div = document.createElement("div");
+        div.className = `p-3 rounded-lg mb-3 max-w-xs ${
+          sender === "user"
+            ? "ml-auto bg-indigo-600 text-white"
+            : "mr-auto bg-gray-200"
+        }`;
+        div.textContent = text;
+        chatbox.appendChild(div);
+        chatbox.scrollTop = chatbox.scrollHeight;
+      }
+
+      async function sendMessage() {
+        const msg = input.value.trim();
+        if (!msg) return;
+        addMessage(msg, "user");
+        input.value = "";
+
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: msg }),
+        });
+        const data = await res.json();
+        addMessage(data.response, "bot");
+      }
+
+      sendBtn.onclick = sendMessage;
+      input.addEventListener(
+        "keypress",
+        (e) => e.key === "Enter" && sendMessage()
+      );
+    </script>
+  </body>
+</html>
