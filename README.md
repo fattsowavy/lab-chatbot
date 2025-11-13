@@ -13,9 +13,8 @@ Chatbot berbasis web untuk membantu **mahasiswa FIKOM UMI** mendapatkan informas
 |------|-----------|
 | **Tanya Jawab Instan** | Ketik pertanyaan → jawaban otomatis |
 | **NLP Sederhana** | Deteksi kata kunci + fuzzy matching |
-| **Basis Pengetahuan** | Data disimpan di `knowledge_base.json` |
-| **Antarmuka Responsif** | Dibuat dengan Tailwind CSS |
-| **Deploy Gratis** | Bisa dijalankan di Render, Railway, atau localhost |
+| **Knowlede Base** | Data disimpan di `knowledge_base.json` |
+| **UI** | Tailwind CSS |
 
 ---
 
