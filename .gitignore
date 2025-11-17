@@ -30,3 +30,12 @@ instance/
 # Environment variables
 .env
 .env.local
+
+MAINTENANCE.md
+QUICKSTART.md
+README.md
+COMPLETION_REPORT.md
+ROBUSTNESS_REPORT.md
+START_HERE.md
+UPGRADE_SUMMARY.md
+VERIFICATION.md

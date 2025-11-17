@@ -9,7 +9,9 @@
     "syarat": [
       "Rambut tidak boleh panjang untuk laki-laki",
       "Dilarang makan/minum di dalam lab",
-      "Gunakan PC sesuai nomor absen"
+      "Gunakan PC sesuai nomor absen",
+      "Harus menjaga kebersihan area kerja",
+      "Dilarang membawa barang berharga yang tidak perlu"
     ],
     "sanksi": ["Peringatan lisan", "Dilarang masuk", "Laporan ke fakultas"]
   },
